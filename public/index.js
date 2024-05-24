@@ -5745,6 +5745,8 @@ app.route("/api/expenses", expensesRoute);
 app.get("*", serveStatic2({ root: "./frontend/dist" }));
 app.get("*", serveStatic2({ path: "./frontend/dist/index.html" }));
 var app_default = app;
-export {
-  app_default as default
-};
+
+// server/index.ts
+Bun.serve({
+  fetch: app_default.fetch
+});
