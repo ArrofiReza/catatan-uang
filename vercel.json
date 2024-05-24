@@ -1,3 +1,10 @@
 {
-  "installCommand": "bun install"
+  "builds":{
+    "src":"package.json",
+    "use":"@vercel/node",
+    "config":{
+      "buildCommand":"bun run build",
+      "outputDirectory":"dist"
+    }    
+  }
 }
