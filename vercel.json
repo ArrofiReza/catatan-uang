@@ -1,17 +1,10 @@
 {
-  "builds": [
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["server/"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server/index.ts"
-    }
-  ]
+  "builds":[{
+    "src":"package.json",
+    "use":"@vercel/node",
+    "config":{
+      "buildCommand":"bun run build",
+      "outputDirectory":"dist"
+    }    
+  }]
 }
