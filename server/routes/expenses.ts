@@ -34,7 +34,7 @@ export const expensesRoute = new Hono()
   fakeExpenses.push({...expense, id: fakeExpenses.length+1})
   return c.json(expense)
 })
-.get("/total-spent", (c) => {
+.get("/total-spent", async(c) => {
   const total = fakeExpenses.reduce((acc, expense) => acc+ expense.amount, 0)
   return c.json({ total })
 })
